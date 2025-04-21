@@ -235,7 +235,7 @@ Licença MIT - veja [LICENSE](LICENSE) para detalhes.
 - **Autor**: Lucas Dev - RedeBots
 - **Email**: [ofc.rede@gmail.com](mailto:ofc.rede@gmail.com)
 - **GitHub**: [LucasDesignerF](https://github.com/LucasDesignerF)
-- **Discord**: Junte-se ao nosso [servidor de suporte](https://discord.gg/123456789012345678)
+- **Discord**: Junte-se ao nosso [servidor de suporte](https://discord.gg/AhcHfUpNeM)
 
 ---
 
