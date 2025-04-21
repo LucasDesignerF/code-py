@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Code.py - Biblioteca pioneira para bots Discord 2025, 100% brasileira, com suporte a IA, voz avançada, OAuth2 e interações modernas.">
+    <meta name="keywords" content="Code.py, bots Discord, Python, IA, voz, OAuth2, biblioteca brasileira, Discord 2025, desenvolvimento de bots">
+    <meta name="author" content="Lucas Dev - RedeBots">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/LucasDesignerF/code-py">
+    <meta property="og:title" content="Code.py - Biblioteca Pioneira para Bots Discord 2025">
+    <meta property="og:description" content="Crie bots Discord modernos com Code.py, uma biblioteca 100% brasileira com IA, voz avançada e OAuth2.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Python_Windows_source_code_icon_2006%E2%80%932016_Vista.svg/2048px-Python_Windows_source_code_icon_2006%E2%80%932016_Vista.svg.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Code.py - Biblioteca Pioneira para Bots Discord 2025">
+    <meta name="twitter:description" content="Crie bots Discord modernos com Code.py, uma biblioteca 100% brasileira com IA, voz avançada e OAuth2.">
+    <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Python_Windows_source_code_icon_2006%E2%80%932016_Vista.svg/2048px-Python_Windows_source_code_icon_2006%E2%80%932016_Vista.svg.png">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Code.py",
+        "description": "Biblioteca pioneira para bots Discord 2025, 100% brasileira, com suporte a IA, voz, OAuth2 e interações modernas.",
+        "codeRepository": "https://github.com/LucasDesignerF/code-py",
+        "programmingLanguage": {
+            "@type": "ComputerLanguage",
+            "name": "Python"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Lucas Dev - RedeBots",
+            "email": "ofc.rede@gmail.com"
+        },
+        "license": "https://opensource.org/licenses/MIT"
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Python_Windows_source_code_icon_2006%E2%80%932016_Vista.svg/2048px-Python_Windows_source_code_icon_2006%E2%80%932016_Vista.svg.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWixMB2O4pSL3uF7DH8+0CR57+0F5K0rQ2JXL5wm4PKXhZuEd/jiO2jgs3aFJHLg==sha512" crossorigin="anonymous">
+
+    <!-- Prism.js para Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css" integrity="sha512-jB3zly99+1oQvNWV0tuaq+27+3rY1JGO6vJ/6aTPYT8Q4ULLtT0kXh+ab0Z0ZDRvW5qZmdnqA3N7gq3wkhzohg==" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaCbQ3v9D+25a2N2j2W0ZLOX0zIl/Eto2uBrkGh0gSyKOKL+npApdAV0EKHasIABXujqx0S2JHog==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" integrity="sha512-6eJq7ZcIfBmo9+0bMnS2L0eP0z2Z3o04K0Mj3P4E3eQ+0XhV2jY7v0wM7b0oT6f3b0p2gT6iJ/y3oTK2o3o5w==" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <title>Code.py - Documentação Oficial 🇧🇷</title>
+
+    <style>
+        :root {
+            --discord-dark: #2C2F33;
+            --discord-darker: #23272A;
+            --discord-light: #36393F;
+            --discord-purple: #5865F2;
+            --codepy-green: #00FF00;
+            --text-light: #DCDDDE;
+            --text-white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Whitney', 'Segoe UI', Arial, sans-serif;
+            background: var(--discord-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 240px;
+            background: var(--discord-darker);
+            padding: 20px 10px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+            border-right: 2px solid var(--discord-purple);
+            transition: var(--transition);
+        }
+
+        .sidebar .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-left: 10px;
+        }
+
+        .sidebar .logo img {
+            width: 48px;
+            margin-right: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .sidebar .logo h1 {
+            font-size: 1.4rem;
+            color: var(--codepy-green);
+            font-weight: 600;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 8px 0;
+        }
+
+        .sidebar ul li a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .sidebar ul li a:hover, .sidebar ul li a.active {
+            background: var(--discord-purple);
+            color: var(--text-white);
+        }
+
+        .sidebar ul li a i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .sidebar ul li .category {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding: 10px 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .sidebar ul li .sub-menu {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .sidebar ul li .sub-menu.active {
+            display: block;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 240px;
+            padding: 30px;
+            width: calc(100% - 240px);
+            background: var(--discord-light);
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .header img {
+            width: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .header img:hover {
+            transform: rotate(360deg);
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            color: var(--codepy-green);
+            text-shadow: var(--shadow);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header .btn-group {
+            margin-top: 20px;
+        }
+
+        .section {
+            background: var(--discord-dark);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            animation: slideIn 0.5s ease-in;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: var(--codepy-green);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2 i {
+            margin-right: 10px;
+        }
+
+        .section p, .section ul {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .section ul {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .section ul li {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .section ul li i {
+            color: var(--codepy-green);
+            margin-right: 10px;
+        }
+
+        .code-block {
+            position: relative;
+            background: #1E1E1E;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', monospace;
+            color: var(--text-light);
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .code-block .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--discord-purple);
+            color: var(--text-white);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .code-block .copy-btn:hover {
+            background: var(--codepy-green);
+            color: #1E1E1E;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: var(--discord-purple);
+            color: var(--text-white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin: 5px;
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .btn:hover {
+            background: var(--codepy-green);
+            color: #1E1E1E;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--discord-dark);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .modal-content .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--discord-purple);
+            color: var(--text-white);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .modal-content .close-btn:hover {
+            background: var(--codepy-green);
+            color: #1E1E1E;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 2px solid var(--discord-purple);
+                padding: 10px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header img {
+                width: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.4rem;
+            }
+
+            .code-block {
+                font-size: 0.85rem;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Python_Windows_source_code_icon_2006%E2%80%932016_Vista.svg/2048px-Python_Windows_source_code_icon_2006%E2%80%932016_Vista.svg.png" alt="Code.py Logo">
+                <h1>Code.py 🇧🇷</h1>
+            </div>
+            <ul>
+                <li><a href="#inicio"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#instalacao"><i class="fas fa-download"></i> Instalação</a></li>
+                <li>
+                    <div class="category"><i class="fas fa-rocket"></i> Funcionalidades</div>
+                    <ul class="sub-menu">
+                        <li><a href="#voz"><i class="fas fa-microphone"></i> Voz Avançada</a></li>
+                        <li><a href="#ia"><i class="fas fa-brain"></i> Integração com IA</a></li>
+                        <li><a href="#oauth2"><i class="fas fa-lock"></i> OAuth2</a></li>
+                        <li><a href="#comandos"><i class="fas fa-terminal"></i> Comandos</a></li>
+                        <li><a href="#escalabilidade"><i class="fas fa-chart-line"></i> Escalabilidade</a></li>
+                    </ul>
+                </li>
+                <li><a href="#exemplos"><i class="fas fa-code"></i> Exemplos</a></li>
+                <li><a href="#documentacao"><i class="fas fa-book"></i> Documentação</a></li>
+                <li><a href="#contribuicao"><i class="fas fa-users"></i> Contribuição</a></li>
+                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header" id="inicio">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Python_Windows_source_code_icon_2006%E2%80%932016_Vista.svg/2048px-Python_Windows_source_code_icon_2006%E2%80%932016_Vista.svg.png" alt="Code.py Logo">
+                <h1>Code.py - Bots Discord do Futuro, Feitos no Brasil 🇧🇷</h1>
+                <p>Biblioteca pioneira para 2025, 100% brasileira, com IA, voz avançada, OAuth2 e interações modernas. Crie bots incríveis com simplicidade!</p>
+                <div class="btn-group">
+                    <a href="https://pypi.org/project/code-py/" class="btn"><i class="fab fa-python"></i> Instalar via PyPI</a>
+                    <a href="https://github.com/LucasDesignerF/code-py" class="btn"><i class="fab fa-github"></i> Ver no GitHub</a>
+                    <a href="https://discord.gg/AhcHfUpNeM" class="btn"><i class="fab fa-discord"></i> Code Projects by RedeBots</a>
+                </div>
+            </header>
+
+            <section class="section" id="instalacao">
+                <h2><i class="fas fa-download"></i> Como Instalar a Code.py</h2>
+                <p>Instalar a Code.py é tão fácil quanto um comando no terminal! Siga os passos abaixo para começar:</p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    <pre><code class="language-python">pip install code-py</code></pre>
+                </div>
+                <p><strong>Pré-requisitos:</strong></p>
+                <ul>
+                    <li><i class="fas fa-check"></i> <strong>Python 3.12.7+</strong>: Certifique-se de ter a versão mais recente do Python instalada.</li>
+                    <li><i class="fas fa-check"></i> <strong>Dependências principais</strong>: aiohttp>=3.11.17, redis>=5.2.1, pydub>=0.25.1, pyopus>=0.3.0.</li>
+                    <li><i class="fas fa-check"></i> <strong>Dependências opcionais</strong>: python-vlc>=3.0.0, sounddevice>=0.4.0 (para backends VLC e áudio bruto).</li>
+                </ul>
+                <p><strong>Por que é tão fácil?</strong> A Code.py usa backends puros em Python (como pydub) para manipulação de áudio, eliminando a necessidade de instalar binários como FFmpeg ou VLC. Isso significa que você pode começar a criar bots imediatamente, sem complicações!</p>
+                <p><strong>Ambiente Virtual (Recomendado):</strong></p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    <pre><code class="language-bash">
+# Criar ambiente virtual
+python -m venv venv
+
+# Ativar (Linux/Mac)
+source venv/bin/activate
+
+# Ativar (Windows)
+venv\Scripts\activate
+
+# Instalar Code.py
+pip install code-py
+                    </code></pre>
+                </div>
+            </section>
+
+            <section class="section" id="voz">
+                <h2><i class="fas fa-microphone"></i> Voz Avançada</h2>
+                <p>A Code.py leva a interação por voz a outro nível, com suporte nativo a Text-to-Speech (TTS), Speech-to-Text (STT), e reprodução multimídia sem dependências externas. Crie bots que falam e ouvem como nunca antes!</p>
+                <ul>
+                    <li><i class="fas fa-volume-up"></i> <strong>TTS com ElevenLabs</strong>: Gera fala em português com vozes realistas.</li>
+                    <li><i class="fas fa-ear"></i> <strong>STT com Whisper</strong>: Transcreve áudio capturado em tempo real.</li>
+                    <li><i class="fas fa-play"></i> <strong>Reprodução Multimídia</strong>: Suporte a backends pydub (padrão), Opus (baixa latência), VLC, e sounddevice.</li>
+                    <li><i class="fas fa-list"></i> <strong>Fila de Reprodução</strong>: Toque múltiplos áudios em sequência.</li>
+                    <li><i class="fas fa-microphone-alt"></i> <strong>Captura de Áudio</strong>: Grave áudio diretamente de canais de voz.</li>
+                </ul>
+                <p><strong>Exemplo: Fazer o Bot Falar</strong></p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    <pre><code class="language-python">
+from codepy import Code, Inter, Cmd, Voz, Canal
+
+bot = Code.criar_bot(prefix="!")
+
+@bot.cmd("falar", desc="Faz o bot falar algo", opts=[{"nome": "texto", "desc": "Texto a ser falado", "tipo": "texto"}])
+async def falar(inter: Inter, texto: str):
+    canal = Canal(inter.channel)  # Obtém o canal de voz do usuário
+    voz = Voz(bot, canal, elevenlabs_key="SUA_CHAVE_ELEVENLABS", backend="pydub")
+    await voz.conectar()  # Conecta ao canal de voz
+    await voz.falar(texto)  # Gera e toca a fala
+    await voz.desconectar()  # Desconecta
+    await inter.resp("Fala enviada com sucesso!")
+
+Code.rodar(bot, "SEU_TOKEN_AQUI")
+                    </code></pre>
+                </div>
+                <p><strong>Resultado no Discord:</strong> O bot entra no canal de voz, fala o texto fornecido (ex.: "Olá, mundo!") com uma voz realista em português, e sai do canal.</p>
+                <p><a href="#" class="btn" onclick="openModal('voz-modal')">Ver Exemplo Completo</a></p>
+            </section>
+
+            <section class="section" id="ia">
+                <h2><i class="fas fa-brain"></i> Integração com IA</h2>
+                <p>Com a Code.py, você pode integrar IA generativa para criar bots inteligentes. Use o Grok (xAI) para gerar respostas ou personalize com outras APIs.</p>
+                <ul>
+                    <li><i class="fas fa-comment"></i> <strong>Grok (xAI)</strong>: Gera texto para respostas dinâmicas.</li>
+                    <li><i class="fas fa-cogs"></i> <strong>Extensibilidade</strong>: Conecte-se a APIs como ElevenLabs e Whisper.</li>
+                    <li><i class="fas fa-heart"></i> <strong>Análise de Sentimentos</strong>: Planejado para versões futuras.</li>
+                </ul>
+                <p><strong>Exemplo: Responder com IA</strong></p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    <pre><code class="language-python">
+from codepy import Code, Inter, Cmd, IA
+
+bot = Code.criar_bot(prefix="!")
+
+@bot.cmd("perguntar", desc="Faz uma pergunta à IA", opts=[{"nome": "pergunta", "desc": "Sua pergunta", "tipo": "texto"}])
+async def perguntar(inter: Inter, pergunta: str):
+    ia = IA(api_key="SUA_CHAVE_XAI")
+    resposta = await ia.gerar_texto(pergunta, modelo="grok-3")
+    await inter.resp(f"**Pergunta:** {pergunta}\n**Resposta:** {resposta}")
+
+Code.rodar(bot, "SEU_TOKEN_AQUI")
+                    </code></pre>
+                </div>
+                <p><strong>Resultado no Discord:</strong> O usuário digita `/perguntar Qual é o futuro da IA?`, e o bot responde com uma resposta gerada pelo Grok, formatada em Markdown.</p>
+            </section>
+
+            <section class="section" id="oauth2">
+                <h2><i class="fas fa-lock"></i> OAuth2 Nativo</h2>
+                <p>Autentique usuários com facilidade usando o OAuth2 do Discord. A Code.py simplifica a geração de URLs de autorização e troca de tokens.</p>
+                <ul>
+                    <li><i class="fas fa-link"></i> <strong>URLs de Autorização</strong>: Gere links para autenticação.</li>
+                    <li><i class="fas fa-key"></i> <strong>Troca de Tokens</strong>: Obtenha tokens de acesso automaticamente.</li>
+                </ul>
+                <p><strong>Exemplo: Autenticação OAuth2</strong></p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    <pre><code class="language-python">
+from codepy import Code, Inter, Cmd, OAuth
+
+bot = Code.criar_bot(prefix="!")
+
+@bot.cmd("login", desc="Gera um link de login", opts=[])
+async def login(inter: Inter):
+    oauth = OAuth(client_id="SEU_CLIENT_ID", client_secret="SEU_CLIENT_SECRET", redirect_uri="SEU_REDIRECT_URI")
+    url = await oauth.get_auth_url(scopes=["identify", "guilds"])
+    await inter.resp(f"Faça login aqui: {url}")
+
+Code.rodar(bot, "SEU_TOKEN_AQUI")
+                    </code></pre>
+                </div>
+                <p><strong>Resultado no Discord:</strong> O usuário recebe um link clicável para autenticar via OAuth2, que redireciona para o Discord.</p>
+            </section>
+
+            <section class="section" id="comandos">
+                <h2><i class="fas fa-terminal"></i> Comandos Modernos</h2>
+                <p>Crie comandos interativos com suporte a slash commands, contextuais, e autocomplete dinâmico. A sincronização incremental otimiza o registro de comandos.</p>
+                <ul>
+                    <li><i class="fas fa-slash"></i> <strong>Slash Commands</strong>: Comandos modernos com opções.</li>
+                    <li><i class="fas fa-list"></i> <strong>Autocomplete</strong>: Sugestões dinâmicas para inputs.</li>
+                    <li><i class="fas fa-sync"></i> <strong>Sincronização Incremental</strong>: Registra apenas comandos novos.</li>
+                </ul>
+                <p><strong>Exemplo: Comando com Autocomplete</strong></p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    <pre><code class="language-python">
+from codepy import Code, Inter, Cmd, InterManager
+
+bot = Code.criar_bot(prefix="!")
+
+manager = InterManager()
+
+@manager.autocomplete("buscar", "termo")
+async def autocomplete_buscar(inter: Inter, termo: str):
+    sugestoes = [
+        {"nome": "Python", "valor": "python"},
+        {"nome": "Discord", "valor": "discord"},
+        {"nome": "IA", "valor": "ia"}
+    ]
+    return [s for s in sugestoes if termo.lower() in s["nome"].lower()]
+
+@bot.cmd("buscar", desc="Busca algo", opts=[{"nome": "termo", "desc": "Termo a buscar", "tipo": "texto", "auto": True}])
+async def buscar(inter: Inter, termo: str):
+    await inter.resp(f"Você buscou: {termo}")
+
+Code.rodar(bot, "SEU_TOKEN_AQUI")
+                    </code></pre>
+                </div>
+                <p><strong>Resultado no Discord:</strong> O usuário digita `/buscar`, e o campo "termo" sugere "Python", "Discord", ou "IA" enquanto digita.</p>
+            </section>
+
+            <section class="section" id="escalabilidade">
+                <h2><i class="fas fa-chart-line"></i> Escalabilidade e Performance</h2>
+                <p>A Code.py foi projetada para bots de grande escala, com recursos avançados de cache, sharding, e monitoramento.</p>
+                <ul>
+                    <li><i class="fas fa-database"></i> <strong>Cache com Redis</strong>: Armazenamento rápido de dados com TTL.</li>
+                    <li><i class="fas fa-server"></i> <strong>Sharding Automático</strong>: Suporte a servidores grandes.</li>
+                    <li><i class="fas fa-chart-bar"></i> <strong>Métricas</strong>: Monitore latência, interações, e erros.</li>
+                </ul>
+                <p><strong>Exemplo: Configurar Cache com Redis</strong></p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    <pre><code class="language-python">
+from codepy import Code
+
+bot = Code.criar_bot(prefix="!", cache_conf={"redis_url": "redis://localhost:6379"})
+Code.rodar(bot, "SEU_TOKEN_AQUI")
+                    </code></pre>
+                </div>
+                <p><strong>Resultado:</strong> O bot usa Redis para cache, reduzindo o tempo de resposta em servidores grandes.</p>
+            </section>
+
+            <section class="section" id="exemplos">
+                <h2><i class="fas fa-code"></i> Exemplos Práticos</h2>
+                <p>Aqui está um exemplo completo de um bot com comandos, voz, e interações:</p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    <pre><code class="language-python">
+from codepy import Code, Inter, Embed, Cmd, Voz, Canal
+
+bot = Code.criar_bot(prefix="!")
+
+# Comando com embed e botão
+@bot.cmd("ola", desc="Diz olá", opts=[{"nome": "user", "desc": "Usuário a saudar", "tipo": "user"}])
+async def ola(inter: Inter, user: User):
+    embed = Embed(tit="Olá!", desc=f"Saudações, {user.nome}! 😄", cor=0x00FF00)
+    await inter.resp(embed=embed, btns=[{"txt": "Clicar Aqui", "id": "btn_ola"}])
+
+@bot.btn("btn_ola")
+async def btn_ola(inter: Inter):
+    await inter.resp("Você clicou no botão! 🎉", efemera=True)
+
+# Comando para tocar áudio
+@bot.cmd("play", desc="Toca um áudio", opts=[{"nome": "url", "desc": "URL ou caminho do áudio", "tipo": "texto"}])
+async def play(inter: Inter, url: str):
+    canal = Canal(inter.channel)
+    voz = Voz(bot, canal, backend="opus")
+    await voz.conectar()
+    await voz.play_audio(url)
+    await voz.desconectar()
+    await inter.resp("Áudio tocado com sucesso!")
+
+Code.rodar(bot, "SEU_TOKEN_AQUI")
+                    </code></pre>
+                </div>
+                <p><strong>Resultado no Discord:</strong></p>
+                <ul>
+                    <li><i class="fas fa-comment"></i> `/ola @Usuário`: Mostra um embed verde com um botão clicável.</li>
+                    <li><i class="fas fa-play"></i> `/play audio.mp3`: Toca o áudio no canal de voz usando o backend Opus.</li>
+                </ul>
+                <p><a href="#" class="btn" onclick="openModal('exemplo-modal')">Ver Exemplo Completo</a></p>
+            </section>
+
+            <section class="section" id="documentacao">
+                <h2><i class="fas fa-book"></i> Documentação Completa</h2>
+                <p>A Code.py é organizada em classes intuitivas, com métodos claros e abreviações em português. Aqui está um resumo:</p>
+                <h3><i class="fas fa-cog"></i> Classe <code>Code</code></h3>
+                <p>Classe estática para criar e gerenciar bots.</p>
+                <ul>
+                    <li><i class="fas fa-plus"></i> <code>Code.criar_bot(prefix="!", cache_conf=None, shards=1)</code>: Cria um bot com configurações personalizadas.</li>
+                    <li><i class="fas fa-play"></i> <code>Code.rodar(bot, token)</code>: Inicia o bot com o token do Discord.</li>
+                </ul>
+                <h3><i class="fas fa-robot"></i> Classe <code>Bot</code></h3>
+                <p>Gerencia comandos e interações.</p>
+                <ul>
+                    <li><i class="fas fa-terminal"></i> <code>@bot.cmd(nome, desc, opts)</code>: Registra um comando.</li>
+                    <li><i class="fas fa-mouse-pointer"></i> <code>@bot.btn(id)</code>: Registra um callback para botões.</li>
+                </ul>
+                <h3><i class="fas fa-microphone"></i> Classe <code>Voz</code></h3>
+                <p>Manipula voz e multimídia.</p>
+                <ul>
+                    <li><i class="fas fa-volume-up"></i> <code>voz.falar(texto)</code>: Gera e toca fala com ElevenLabs.</li>
+                    <li><i class="fas fa-ear"></i> <code>voz.ouvir(duracao)</code>: Captura e transcreve áudio com Whisper.</li>
+                    <li><i class="fas fa-play"></i> <code>voz.play_audio(source)</code>: Toca áudio com backend configurável.</li>
+                </ul>
+                <p><a href="https://github.com/LucasDesignerF/code-py/wiki" class="btn">Ver Wiki Completa</a></p>
+            </section>
+
+            <section class="section" id="contribuicao">
+                <h2><i class="fas fa-users"></i> Como Contribuir</h2>
+                <p>A Code.py é open-source e feita pela comunidade brasileira. Junte-se a nós!</p>
+                <ol>
+                    <li><i class="fas fa-code-branch"></i> Faça um fork do repositório: <a href="https://github.com/LucasDesignerF/code-py">github.com/LucasDesignerF/code-py</a></li>
+                    <li><i class="fas fa-download"></i> Clone: <code>git clone https://github.com/SEU_USUARIO/code-py.git</code></li>
+                    <li><i class="fas fa-plus"></i> Crie uma branch: <code>git checkout -b sua-funcionalidade</code></li>
+                    <li><i class="fas fa-check"></i> Commit: <code>git commit -m "Adiciona funcionalidade X"</code></li>
+                    <li><i class="fas fa-upload"></i> Push: <code>git push origin sua-funcionalidade</code></li>
+                    <li><i class="fas fa-code"></i> Abra um Pull Request no GitHub.</li>
+                </ol>
+                <p><strong>Dicas:</strong></p>
+                <ul>
+                    <li><i class="fas fa-code"></i> Siga o estilo PEP 8.</li>
+                    <li><i class="fas fa-vial"></i> Adicione testes em <code>tests/</code>.</li>
+                    <li><i class="fas fa-comment"></i> Use abreviações em português (ex.: <code>cmd</code>, <code>resp</code>).</li>
+                </ul>
+                <p><a href="https://github.com/LucasDesignerF/code-py/blob/main/CONTRIBUTING.md" class="btn">Diretrizes de Contribuição</a></p>
+            </section>
+
+            <section class="section" id="contato">
+                <h2><i class="fas fa-envelope"></i> Contato e Comunidade</h2>
+                <p>Entre em contato ou junte-se à nossa comunidade vibrante:</p>
+                <ul>
+                    <li><i class="fas fa-user"></i> <strong>Autor</strong>: Lucas Dev - RedeBots</li>
+                    <li><i class="fas fa-envelope"></i> <strong>Email</strong>: <a href="mailto:ofc.rede@gmail.com">ofc.rede@gmail.com</a></li>
+                    <li><i class="fab fa-github"></i> <strong>GitHub</strong>: <a href="https://github.com/LucasDesignerF">LucasDesignerF</a></li>
+                    <li><i class="fab fa-discord"></i> <strong>Discord</strong>: <a href="https://discord.gg/AhcHfUpNeM">Code Projects by RedeBots</a></li>
+                    <li><i class="fab fa-python"></i> <strong>PyPI</strong>: <a href="https://pypi.org/user/codeco2024/">codeco2024</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="voz-modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('voz-modal')">Fechar</button>
+            <h2>Exemplo Completo de Voz</h2>
+            <p>Este exemplo mostra como criar um bot que fala e ouve em um canal de voz:</p>
+            <div class="code-block">
+                <pre><code class="language-python">
+from codepy import Code, Inter, Cmd, Voz, Canal
+
+bot = Code.criar_bot(prefix="!")
+
+@bot.cmd("falar", desc="Faz o bot falar algo", opts=[{"nome": "texto", "desc": "Texto a ser falado", "tipo": "texto"}])
+async def falar(inter: Inter, texto: str):
+    canal = Canal(inter.channel)
+    voz = Voz(bot, canal, elevenlabs_key="SUA_CHAVE_ELEVENLABS", backend="pydub")
+    await voz.conectar()
+    await voz.falar(texto)
+    await voz.desconectar()
+    await inter.resp("Fala enviada com sucesso!")
+
+@bot.cmd("ouvir", desc="Ouve e transcreve", opts=[{"nome": "duracao", "desc": "Duração em segundos", "tipo": "inteiro"}])
+async def ouvir(inter: Inter, duracao: int):
+    canal = Canal(inter.channel)
+    voz = Voz(bot, canal, whisper_key="SUA_CHAVE_WHISPER", backend="opus")
+    await voz.conectar()
+    texto = await voz.ouvir(duracao)
+    await voz.desconectar()
+    await inter.resp(f"Transcrição: {texto}")
+
+Code.rodar(bot, "SEU_TOKEN_AQUI")
+                </code></pre>
+            </div>
+            <p><strong>O que esse código faz?</strong></p>
+            <ul>
+                <li><i class="fas fa-volume-up"></i> O comando <code>/falar "Olá, mundo!"</code> faz o bot entrar no canal de voz, falar "Olá, mundo!" usando ElevenLabs, e sair.</li>
+                <li><i class="fas fa-ear"></i> O comando <code>/ouvir 5</code> grava 5 segundos de áudio do canal e transcreve com Whisper.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="exemplo-modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('exemplo-modal')">Fechar</button>
+            <h2>Exemplo Completo de Bot</h2>
+            <p>Este exemplo cria um bot com comandos, botões, e voz:</p>
+            <div class="code-block">
+                <pre><code class="language-python">
+from codepy import Code, Inter, Embed, Cmd, Voz, Canal
+
+bot = Code.criar_bot(prefix="!")
+
+@bot.cmd("ola", desc="Diz olá", opts=[{"nome": "user", "desc": "Usuário a saudar", "tipo": "user"}])
+async def ola(inter: Inter, user: User):
+    embed = Embed(tit="Olá!", desc=f"Saudações, {user.nome}! 😄", cor=0x00FF00)
+    await inter.resp(embed=embed, btns=[{"txt": "Clicar Aqui", "id": "btn_ola"}])
+
+@bot.btn("btn_ola")
+async def btn_ola(inter: Inter):
+    await inter.resp("Você clicou no botão! 🎉", efemera=True)
+
+@bot.cmd("play", desc="Toca um áudio", opts=[{"nome": "url", "desc": "URL ou caminho do áudio", "tipo": "texto"}])
+async def play(inter: Inter, url: str):
+    canal = Canal(inter.channel)
+    voz = Voz(bot, canal, backend="opus")
+    await voz.conectar()
+    await voz.play_audio(url)
+    await voz.desconectar()
+    await inter.resp("Áudio tocado com sucesso!")
+
+Code.rodar(bot, "SEU_TOKEN_AQUI")
+                </code></pre>
+            </div>
+            <p><strong>O que esse código faz?</strong></p>
+            <ul>
+                <li><i class="fas fa-comment"></i> <code>/ola @Usuário</code>: Mostra um embed com um botão clicável.</li>
+                <li><i class="fas fa-mouse-pointer"></i> Clicar no botão exibe uma mensagem efêmera.</li>
+                <li><i class="fas fa-play"></i> <code>/play audio.mp3</code>: Toca o áudio no canal de voz.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Sub-menu
+        document.querySelectorAll('.category').forEach(category => {
+            category.addEventListener('click', () => {
+                const subMenu = category.nextElementSibling;
+                subMenu.classList.toggle('active');
+            });
+        });
+
+        // Active Link on Scroll
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.sidebar ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Copy Code
+        function copyCode(button) {
+            const code = button.nextElementSibling.querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = 'Copiado!';
+                setTimeout(() => button.textContent = 'Copiar', 2000);
+            });
+        }
+
+        // Modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close Modal on Outside Click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', e => {
+                if (e.target === modal) closeModal(modal.id);
+            });
+        });
+    </script>
+</body>
+</html>
