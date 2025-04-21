@@ -6,7 +6,7 @@
 ![License](https://img.shields.io/github/license/LucasDesignerF/code-py?color=00FF00&style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/LucasDesignerF/code-py?color=00FF00&style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/LucasDesignerF/code-py?color=00FF00&style=flat-square)
-![Discord](https://img.shields.io/discord/123456789012345678?color=00FF00&label=Suporte&logo=discord&style=flat-square)
+![Discord](https://img.shields.io/discord/AhcHfUpNeM?color=00FF00&label=Suporte&logo=discord&style=flat-square)
 
 **Code.py** é uma biblioteca **pioneira** para criação de bots Discord em **2025**, **100% brasileira**, projetada para ser **simples**, **poderosa** e **moderna**. Com abreviações fluídas (como `cmd`, `resp`, `btn`), suporte nativo às tecnologias mais recentes do Discord, integração com **IA**, **voz avançada**, **OAuth2**, e **sincronização incremental**, a Code.py é a escolha ideal para desenvolvedores que querem criar bots inovadores sem complicações.
 
